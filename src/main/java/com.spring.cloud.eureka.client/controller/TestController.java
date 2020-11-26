@@ -21,7 +21,7 @@ public class TestController {
     @Autowired
     EurekaClientService eurekaClientService;
 
-    @RequestMapping("/test")
+    @RequestMapping("/test2")
     public String home(@RequestParam(value = "name",required = false) String name) {
         String str = eurekaClientService.test(name);
         System.out.println(str);
@@ -30,6 +30,11 @@ public class TestController {
 
     @RequestMapping("/ek")
     public String ek(@RequestParam(value = "name",required = false) String name) {
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         if(StringUtils.isNotEmpty(name)){
             return "eureka-client-test2:8673 success";
         }
